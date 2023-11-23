@@ -1,0 +1,27 @@
+Fri Nov 24 00:57:16 2023
+: MSG : Bad luck!
+Fri Nov 24 00:59:17 2023
+: Action:
+Fri Nov 24 00:59:20 2023
+: Action:
+Fri Nov 24 00:59:21 2023
+: Action:
+Fri Nov 24 00:59:21 2023
+: Action:
+Fri Nov 24 00:59:22 2023
+: Action:
+2023-11-24.01:00:52: Action:
+2023-11-24.01:00:55: Action:
+2023-11-24.01:00:55: Action:
+2023-11-24.01:00:56: Action:
+2023-11-24.01:00:57: Bad luck!
+2023-11-24.01:03:38: (C:\Users\mario\Documents\Code\FarWest\main.cpp): Action:
+2023-11-24.01:03:41: (C:\Users\mario\Documents\Code\FarWest\main.cpp): Action:
+2023-11-24.01:03:41: (C:\Users\mario\Documents\Code\FarWest\main.cpp): Action:
+2023-11-24.01:03:42: (C:\Users\mario\Documents\Code\FarWest\main.cpp): Bad luck!
+2023-11-24.01:10:29: ("main.cpp"): Action:
+2023-11-24.01:10:30: ("main.cpp"): Action:
+2023-11-24.01:10:31: ("main.cpp"): Action:
+2023-11-24.01:10:31: ("main.cpp"): Action:
+2023-11-24.01:10:32: ("main.cpp"): Action:
+2023-11-24.01:10:33: ("main.cpp"): Bad luck!
