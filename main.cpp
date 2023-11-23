@@ -2,6 +2,11 @@
 #include <cstdlib>
 #include <time.h>  
 #include <list>
+#include <fstream>
+#include <chrono>
+#include <string>
+#include <filesystem> 
+
 using namespace std;
 
 int drinkCost   = 1;
@@ -224,7 +229,24 @@ public:
 };
 
 
+const std::string currentDateTime() {
+    time_t     now = time(0);
+    struct tm  tstruct;
+    char       buf[80];
+    tstruct = *localtime(&now);
+    strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
 
+    return buf;
+}
+
+void fTrace(string msg)
+{
+    filesystem::path p(__FILE__);
+    ofstream outfile;
+    outfile.open("traces.txt", ios::out | ios::app );
+    outfile << currentDateTime() << ": ("  << p.filename() << "): " << msg << endl;
+    outfile.close();
+}
 
 void prompt()
 {
@@ -281,6 +303,7 @@ int simulateDay(Player* p)
     // Bad luck
     if(chance <= 3)
     {
+        fTrace("Bad luck!");
         cout << "!Bad luck!" << endl;
         if(p->numberOfGuns == 0)
         {
@@ -308,6 +331,7 @@ int main()
         prompt();
         for(int i = 0; i < 3; i++)
         {
+            fTrace("Action:");
             cout << "Action(" << (i+1) << "/3):" << endl;
             readInput();
             processInput(&player);
