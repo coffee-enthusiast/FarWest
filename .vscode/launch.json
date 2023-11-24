@@ -8,7 +8,7 @@
             "name": "Run with Arguments",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/main.exe",
+            "program": "${workspaceFolder}/build/main.exe",
             "args": ["-trace"], // Add your arguments here
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

@@ -1,0 +1,5 @@
+=====FAR WEST TRACING=====
+2023-11-24.12:20:44 ["Trace.cpp"] > Action:
+2023-11-24.12:20:51 ["Trace.cpp"] > Action:
+2023-11-24.12:20:52 ["Trace.cpp"] > Action:
+2023-11-24.12:20:52 ["Trace.cpp"] > Bad luck!

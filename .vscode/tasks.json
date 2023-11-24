@@ -8,10 +8,12 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "${workspaceFolder}/src/*.cpp", // Compile all .cpp files in the src/ directory
+                "-I${workspaceFolder}/include", // Include directory for headers
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}/build/main.exe" // Output executable
             ],
+           
             "options": {
                 "cwd": "${fileDirname}"
             },
