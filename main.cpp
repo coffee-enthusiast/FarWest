@@ -7,7 +7,11 @@
 #include <string>
 #include <filesystem> 
 
+#define TRACES_FILENAME "traces.txt"
+
 using namespace std;
+
+bool isTracingActive = false;
 
 int drinkCost   = 1;
 int drinkStamina = 2;
@@ -239,12 +243,39 @@ const std::string currentDateTime() {
     return buf;
 }
 
+void InitTracing()
+{
+    // Open the file in truncate mode to delete existing content
+    ofstream file(TRACES_FILENAME, ios::out | ios::trunc);
+
+    if (file.is_open()) {
+        // File is opened in truncate mode, existing content is deleted
+        file << "=====FAR WEST TRACING=====" << endl;
+
+        // Perform operations with the file as needed
+
+        file.close();
+    } else {
+        cout << "Unable to open file for truncation!" << endl;
+    }
+}
+
 void fTrace(string msg)
 {
+    if(!isTracingActive)
+    {
+        return;
+    }
+
     filesystem::path p(__FILE__);
     ofstream outfile;
-    outfile.open("traces.txt", ios::out | ios::app );
-    outfile << currentDateTime() << ": ("  << p.filename() << "): " << msg << endl;
+    outfile.open(TRACES_FILENAME, ios::out | ios::app );
+    //  Unable to open file for tracing
+    if(!outfile.is_open())
+    {
+        return;
+    }
+    outfile << currentDateTime() << " ["  << p.filename() << "] > " << msg << endl;
     outfile.close();
 }
 
@@ -319,8 +350,15 @@ int simulateDay(Player* p)
     return 0;
 }
 
-int main()
-{ 
+int main(int argc, char* argv[])
+{
+    //  Activate tracing
+    if (argc > 1 && std::string(argv[1]) == "-trace") 
+    {
+        cout << "Traces argument found!" << endl;
+        isTracingActive = true;
+        InitTracing();
+    }
     Player player = Player();
     cout << "Welcome cowboy!" << endl;
 
