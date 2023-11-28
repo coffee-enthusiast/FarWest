@@ -1,5 +1,5 @@
 #pragma once
-#define TRACES_FILENAME "traces/traces.txt"
+#define TRACES_FILENAME "../UI/traces/traces.txt"
 
 
 #include <string>

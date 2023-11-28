@@ -16,6 +16,8 @@ const std::string currentDateTime() {
 
 void InitTracing()
 {
+    std::filesystem::path cwd = std::filesystem::current_path();
+    std::cout << cwd.string() <<std::endl;
     // Open the file in truncate mode to delete existing content
     std::ofstream file(TRACES_FILENAME, std::ios::out | std::ios::trunc);
 
