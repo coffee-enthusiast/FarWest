@@ -96,6 +96,7 @@ main.exe: GE/libGE.a
 main.exe: UI/libUI.a
 main.exe: UF/libUF.a
 main.exe: CE/libCE.a
+main.exe: UI/libUI.a
 main.exe: CMakeFiles/main.dir/linkLibs.rsp
 main.exe: CMakeFiles/main.dir/objects1.rsp
 main.exe: CMakeFiles/main.dir/link.txt

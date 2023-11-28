@@ -66,6 +66,7 @@ CE/CMakeFiles/CE.dir/src/Player.cpp.obj: C:/Users/mario/Documents/Code/FarWest/C
   C:/Users/mario/Documents/Code/FarWest/CE/include/Room.h \
   C:/Users/mario/Documents/Code/FarWest/UF/include/ActionAttributes.h \
   C:/Users/mario/Documents/Code/FarWest/UF/include/EntitiesInterfaces.h \
+  C:/Users/mario/Documents/Code/FarWest/UI/include/IOFunctions.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
   C:/msys64/mingw64/include/_mingw_off_t.h \
@@ -400,6 +401,8 @@ C:/msys64/mingw64/include/c++/13.1.0/ext/type_traits.h:
 C:/msys64/mingw64/include/c++/13.1.0/list:
 
 C:/msys64/mingw64/include/c++/13.1.0/type_traits:
+
+C:/Users/mario/Documents/Code/FarWest/UI/include/IOFunctions.h:
 
 C:/Users/mario/Documents/Code/FarWest/CE/include/Player.h:
 

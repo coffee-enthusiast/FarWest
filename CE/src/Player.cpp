@@ -1,5 +1,5 @@
 #include "Player.h"
-
+#include "../../UI/include/IOFunctions.h"
 #include "../../UF/include/ActionAttributes.h"
 #include <iostream>
 Player::Player()
@@ -15,14 +15,15 @@ Player::Player()
 
 void Player::printStats()
 {
-    std::cout << "=============" << std::endl;
-    std::cout << "Player Stats:" << std::endl;
-    std::cout << "=============" << std::endl;
-    std::cout    << "\tMoney: $" << money << std::endl
-            << "\tHealth: " << health << "/" << maxHealth << std::endl
-            << "\tStamina: " << stamina << "/" << maxStamina << std::endl
-            << "\tNo of guns: " << numberOfGuns << std::endl;
-    std::cout << "--------------------------" << std::endl;
+    
+    fOut("=============");
+    fOut("Player Stats:");
+    fOut("=============");
+    fOut("\tMoney: $" + std::to_string(money));
+    fOut("\tHealth: $" + std::to_string(health) + "/" + std::to_string(maxHealth));
+    fOut("\tStamina: $" + std::to_string(stamina) + "/" + std::to_string(maxStamina));
+    fOut("\tNo of guns: " + std::to_string(numberOfGuns));
+    fOut("--------------------------");
 }
 
 void Player::addHealth(int healthAmount)
@@ -32,6 +33,11 @@ void Player::addHealth(int healthAmount)
         health = maxHealth;
     if(health < 0)
         health = 0;
+}
+
+int Player::getHealth()
+{
+    return health;
 }
 
 void Player::addStamina(int staminaAmount)
@@ -50,15 +56,15 @@ void Player::simulateAction()
             case WORK:
                 if(stamina < abs(workStamina))
                 {
-                    std::cout << "Not enough stamina to work!" << std::endl;
+                    fOutWarn("Not enough stamina to work!");
                     break;
                 }
                 if(health < abs(workHealth))
                 {
-                    std::cout << "Not enough health to work!" << std::endl;
+                    fOutWarn("Not enough health to work!");
                     break;
                 }
-                std::cout << "Went for work!" << std::endl;
+                fOut("Went for work!");
                 addHealth(workHealth);
                 addStamina(workStamina);
                 money += workMoney;
@@ -66,20 +72,20 @@ void Player::simulateAction()
             case DRINK:
                 if(money < drinkCost)
                 {
-                    std::cout << "Not enough money to buy drink!" << std::endl;
+                    fOutWarn("Not enough money to buy drink!");
                     break;
                 }
-                std::cout << "Got a drink!" << std::endl;
+                fOut("Got a drink!");
                 money -= drinkCost;
                 addStamina(drinkStamina);
                 break;
             case EAT:
                 if(money < foodCost)
                 {
-                    std::cout << "Not enough money to buy food!" << std::endl;
+                    fOutWarn("Not enough money to buy food!");
                     break;
                 }
-                std::cout << "Ate food!" << std::endl;
+                fOut("Ate food!");
                 money -= foodCost;
                 addHealth(foodHealth);
                 addStamina(foodStamina);
@@ -87,15 +93,15 @@ void Player::simulateAction()
             case BUY_GUN:
                 if(money < gunCost)
                 {
-                    std::cout << "Not enough money to buy gun!" << std::endl;
+                    fOutWarn("Not enough money to buy gun!");
                     break;
                 }
-                std::cout << "Bought a gun!" << std::endl;
+                fOut("Bought a gun!");
                 money -= gunCost;
                 numberOfGuns++;
                 break;
             case SLEEP:
-                std::cout << "Went for sleep!" << std::endl;
+                fOut("Went for sleep!");
                 goToSleep();
                 break;
             default:

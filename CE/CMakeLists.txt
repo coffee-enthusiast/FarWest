@@ -10,3 +10,6 @@ add_library(CE STATIC
 # Include directories for Component 1
 target_include_directories(CE PUBLIC include)
 target_include_directories(CE PUBLIC UF/include)
+target_include_directories(CE PUBLIC UI/include)
+
+target_link_libraries(CE PUBLIC UI)
