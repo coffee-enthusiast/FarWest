@@ -7,7 +7,7 @@ extern int playerInput;
 
 void prompt();
 
-int readInput();
+void fInInt(int* storeInput);
 
 void fOut(std::string message);
 void fOutWarn(std::string message);

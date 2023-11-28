@@ -19,7 +19,9 @@ GameEngine::GameEngine()
         for(int i = 0; i < 3; i++)
         {
             fOut("Action(" + std::to_string((i+1)) + "/3):");
-            readInput();
+            int userInput = -1;
+            fInInt(&userInput);
+            player->setPlayerAction(userInput);
             processInput(player);
             player->simulateAction();
             player->printStats();
