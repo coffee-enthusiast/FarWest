@@ -1,0 +1,2 @@
+C:\msys64\mingw64\bin\ar.exe qc libUF.a CMakeFiles/UF.dir/src/PlayerFactory.cpp.obj
+C:\msys64\mingw64\bin\ranlib.exe libUF.a
