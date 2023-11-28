@@ -214,6 +214,7 @@ CMakeFiles/main.dir/clean:
 
 # All Build rule for target.
 UF/CMakeFiles/UF.dir/all: CE/CMakeFiles/CE.dir/all
+UF/CMakeFiles/UF.dir/all: UI/CMakeFiles/UI.dir/all
 	$(MAKE) $(MAKESILENT) -f UF\CMakeFiles\UF.dir\build.make UF/CMakeFiles/UF.dir/depend
 	$(MAKE) $(MAKESILENT) -f UF\CMakeFiles\UF.dir\build.make UF/CMakeFiles/UF.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles --progress-num=7,8 "Built target UF"
@@ -221,7 +222,7 @@ UF/CMakeFiles/UF.dir/all: CE/CMakeFiles/CE.dir/all
 
 # Build rule for subdir invocation for target.
 UF/CMakeFiles/UF.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 UF/CMakeFiles/UF.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles 0
 .PHONY : UF/CMakeFiles/UF.dir/rule
@@ -241,6 +242,7 @@ UF/CMakeFiles/UF.dir/clean:
 # All Build rule for target.
 GE/CMakeFiles/GE.dir/all: UF/CMakeFiles/UF.dir/all
 GE/CMakeFiles/GE.dir/all: CE/CMakeFiles/CE.dir/all
+GE/CMakeFiles/GE.dir/all: UI/CMakeFiles/UI.dir/all
 	$(MAKE) $(MAKESILENT) -f GE\CMakeFiles\GE.dir\build.make GE/CMakeFiles/GE.dir/depend
 	$(MAKE) $(MAKESILENT) -f GE\CMakeFiles\GE.dir\build.make GE/CMakeFiles/GE.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles --progress-num=5,6 "Built target GE"
@@ -248,7 +250,7 @@ GE/CMakeFiles/GE.dir/all: CE/CMakeFiles/CE.dir/all
 
 # Build rule for subdir invocation for target.
 GE/CMakeFiles/GE.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 GE/CMakeFiles/GE.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles 0
 .PHONY : GE/CMakeFiles/GE.dir/rule
@@ -266,7 +268,7 @@ GE/CMakeFiles/GE.dir/clean:
 # Target rules for target CE/CMakeFiles/CE.dir
 
 # All Build rule for target.
-CE/CMakeFiles/CE.dir/all:
+CE/CMakeFiles/CE.dir/all: UI/CMakeFiles/UI.dir/all
 	$(MAKE) $(MAKESILENT) -f CE\CMakeFiles\CE.dir\build.make CE/CMakeFiles/CE.dir/depend
 	$(MAKE) $(MAKESILENT) -f CE\CMakeFiles\CE.dir\build.make CE/CMakeFiles/CE.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles --progress-num=1,2,3,4 "Built target CE"
@@ -274,7 +276,7 @@ CE/CMakeFiles/CE.dir/all:
 
 # Build rule for subdir invocation for target.
 CE/CMakeFiles/CE.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CE/CMakeFiles/CE.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles 0
 .PHONY : CE/CMakeFiles/CE.dir/rule

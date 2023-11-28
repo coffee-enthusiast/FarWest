@@ -8,17 +8,17 @@ GameEngine::GameEngine()
 {
     IPlayer* player = PlayerFactory::createPlayer();
     currDay = 1;
-    std::cout << "Welcome cowboy!" << std::endl;
+    fOut("Welcome cowboy!");
 
     while(player->getPlayerAction() != 5 && player->isPlayerAlive() == true)
     {
-        std::cout << "Day: " << currDay++ << std::endl;
+        fOut("Day: " + std::to_string(currDay));
+        currDay++;
         player->printStats();
         prompt();
         for(int i = 0; i < 3; i++)
         {
-            fTrace("Action:");
-            std::cout << "Action(" << (i+1) << "/3):" << std::endl;
+            fOut("Action(" + std::to_string((i+1)) + "/3):");
             readInput();
             processInput(player);
             player->simulateAction();
@@ -49,10 +49,10 @@ int GameEngine::simulateDay(IPlayer* p)
     if(chance <= 3)
     {
         fTrace("Bad luck!");
-        std::cout << "!Bad luck!" << std::endl;
+        fOutWarn("!Bad luck!");
         if(p->getNumberOfGuns() == 0)
         {
-            std::cout << "You died!" << std::endl;
+            fOutWarn("You died!");
             p->setPlayerAlive(false);
         }
         else
@@ -62,7 +62,7 @@ int GameEngine::simulateDay(IPlayer* p)
             {
                 case -1:
                     p->addHealth(-5);
-                    std::cout<<"Ouch! -5 Health!" << std::endl;
+                    fOutWarn("Ouch! -5 Health!");
                     break;
                 default:
                     break;
