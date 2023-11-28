@@ -20,10 +20,10 @@ void prompt()
     std::cout << "-----------------------------------------------------" << std::endl;
 }
 
-int readInput()
+void fInInt(int* storeInput)
 {
-    std::cin >> playerInput;
-    return playerInput;
+    std::cin >> (*storeInput);
+    return;
 }
 /*
 The different color codes are

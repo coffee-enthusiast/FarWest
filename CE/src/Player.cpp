@@ -20,8 +20,8 @@ void Player::printStats()
     fOut("Player Stats:");
     fOut("=============");
     fOut("\tMoney: $" + std::to_string(money));
-    fOut("\tHealth: $" + std::to_string(health) + "/" + std::to_string(maxHealth));
-    fOut("\tStamina: $" + std::to_string(stamina) + "/" + std::to_string(maxStamina));
+    fOut("\tHealth: " + std::to_string(health) + "/" + std::to_string(maxHealth));
+    fOut("\tStamina: " + std::to_string(stamina) + "/" + std::to_string(maxStamina));
     fOut("\tNo of guns: " + std::to_string(numberOfGuns));
     fOut("--------------------------");
 }
@@ -121,7 +121,7 @@ void Player::simulateAction()
     }
     void Player::setPlayerAction(int action)
     {
-        playerAction = (PlayerAction) action;
+        playerAction = (PlayerAction) (action-1);
     }
 
     bool Player::isPlayerAlive()
