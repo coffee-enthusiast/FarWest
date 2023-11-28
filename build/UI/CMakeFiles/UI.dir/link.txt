@@ -1,0 +1,2 @@
+C:\msys64\mingw64\bin\ar.exe qc libUI.a CMakeFiles/UI.dir/src/IOFunctions.cpp.obj CMakeFiles/UI.dir/src/Trace.cpp.obj
+C:\msys64\mingw64\bin\ranlib.exe libUI.a

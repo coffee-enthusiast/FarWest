@@ -1,0 +1,2 @@
+C:\msys64\mingw64\bin\ar.exe qc libGE.a CMakeFiles/GE.dir/src/GameEngine.cpp.obj
+C:\msys64\mingw64\bin\ranlib.exe libGE.a

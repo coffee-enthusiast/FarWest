@@ -1,0 +1,50 @@
+[
+{
+  "directory": "C:/Users/mario/Documents/Code/FarWest/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\main.cpp.obj -c C:\\Users\\mario\\Documents\\Code\\FarWest\\main.cpp",
+  "file": "C:/Users/mario/Documents/Code/FarWest/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/mario/Documents/Code/FarWest/build/UF",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/UF.dir/includes_CXX.rsp -g -o CMakeFiles\\UF.dir\\src\\PlayerFactory.cpp.obj -c C:\\Users\\mario\\Documents\\Code\\FarWest\\UF\\src\\PlayerFactory.cpp",
+  "file": "C:/Users/mario/Documents/Code/FarWest/UF/src/PlayerFactory.cpp",
+  "output": "UF/CMakeFiles/UF.dir/src/PlayerFactory.cpp.obj"
+},
+{
+  "directory": "C:/Users/mario/Documents/Code/FarWest/build/GE",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GE.dir/includes_CXX.rsp -g -o CMakeFiles\\GE.dir\\src\\GameEngine.cpp.obj -c C:\\Users\\mario\\Documents\\Code\\FarWest\\GE\\src\\GameEngine.cpp",
+  "file": "C:/Users/mario/Documents/Code/FarWest/GE/src/GameEngine.cpp",
+  "output": "GE/CMakeFiles/GE.dir/src/GameEngine.cpp.obj"
+},
+{
+  "directory": "C:/Users/mario/Documents/Code/FarWest/build/CE",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/CE.dir/includes_CXX.rsp -g -o CMakeFiles\\CE.dir\\src\\Home.cpp.obj -c C:\\Users\\mario\\Documents\\Code\\FarWest\\CE\\src\\Home.cpp",
+  "file": "C:/Users/mario/Documents/Code/FarWest/CE/src/Home.cpp",
+  "output": "CE/CMakeFiles/CE.dir/src/Home.cpp.obj"
+},
+{
+  "directory": "C:/Users/mario/Documents/Code/FarWest/build/CE",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/CE.dir/includes_CXX.rsp -g -o CMakeFiles\\CE.dir\\src\\Player.cpp.obj -c C:\\Users\\mario\\Documents\\Code\\FarWest\\CE\\src\\Player.cpp",
+  "file": "C:/Users/mario/Documents/Code/FarWest/CE/src/Player.cpp",
+  "output": "CE/CMakeFiles/CE.dir/src/Player.cpp.obj"
+},
+{
+  "directory": "C:/Users/mario/Documents/Code/FarWest/build/CE",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/CE.dir/includes_CXX.rsp -g -o CMakeFiles\\CE.dir\\src\\Room.cpp.obj -c C:\\Users\\mario\\Documents\\Code\\FarWest\\CE\\src\\Room.cpp",
+  "file": "C:/Users/mario/Documents/Code/FarWest/CE/src/Room.cpp",
+  "output": "CE/CMakeFiles/CE.dir/src/Room.cpp.obj"
+},
+{
+  "directory": "C:/Users/mario/Documents/Code/FarWest/build/UI",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/UI.dir/includes_CXX.rsp -g -o CMakeFiles\\UI.dir\\src\\IOFunctions.cpp.obj -c C:\\Users\\mario\\Documents\\Code\\FarWest\\UI\\src\\IOFunctions.cpp",
+  "file": "C:/Users/mario/Documents/Code/FarWest/UI/src/IOFunctions.cpp",
+  "output": "UI/CMakeFiles/UI.dir/src/IOFunctions.cpp.obj"
+},
+{
+  "directory": "C:/Users/mario/Documents/Code/FarWest/build/UI",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/UI.dir/includes_CXX.rsp -g -o CMakeFiles\\UI.dir\\src\\Trace.cpp.obj -c C:\\Users\\mario\\Documents\\Code\\FarWest\\UI\\src\\Trace.cpp",
+  "file": "C:/Users/mario/Documents/Code/FarWest/UI/src/Trace.cpp",
+  "output": "UI/CMakeFiles/UI.dir/src/Trace.cpp.obj"
+}
+]

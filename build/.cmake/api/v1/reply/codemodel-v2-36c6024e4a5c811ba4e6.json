@@ -1,0 +1,189 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "UF",
+					"jsonFile" : "directory-UF-Debug-143389060b8478217971.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "UF",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "GE",
+					"jsonFile" : "directory-GE-Debug-b4095dd25fc4cd2231d7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "GE",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "GCE",
+					"jsonFile" : "directory-GCE-Debug-b2c3eef690145aef76b7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "GCE"
+				},
+				{
+					"build" : "FS",
+					"jsonFile" : "directory-FS-Debug-44287b0f6b767b06ed0b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "FS"
+				},
+				{
+					"build" : "CE",
+					"jsonFile" : "directory-CE-Debug-847b646ead27c9e86367.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "CE",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "UI",
+					"jsonFile" : "directory-UI-Debug-2fb30ecde3adcd6f7f99.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "UI",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					],
+					"name" : "FarWest",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "CE::@30ecc33036164efa6134",
+					"jsonFile" : "target-CE-Debug-734151a017f3f32753dd.json",
+					"name" : "CE",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "GE::@d5d9d29d410a5ca67250",
+					"jsonFile" : "target-GE-Debug-77a7b0ee6eb3664d5cc1.json",
+					"name" : "GE",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "UF::@dd93aed12ed8a5d3a007",
+					"jsonFile" : "target-UF-Debug-ade357b9a77c050fe409.json",
+					"name" : "UF",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "UI::@e824db2576db0fa939c2",
+					"jsonFile" : "target-UI-Debug-5669c078be2b79d8c005.json",
+					"name" : "UI",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main-Debug-9ba411fba83ac82d6156.json",
+					"name" : "main",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/mario/Documents/Code/FarWest/build",
+		"source" : "C:/Users/mario/Documents/Code/FarWest"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
