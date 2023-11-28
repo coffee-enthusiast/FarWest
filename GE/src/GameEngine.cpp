@@ -37,14 +37,14 @@ GameEngine::GameEngine()
 
 int GameEngine::gunFight(IPlayer* p)
 {
-    return 1;
+    return -1;
 }
 
 int GameEngine::simulateDay(IPlayer* p)
 {
     srand(time(0));
     int chance = rand() % 10;
-
+    fTrace("Chance: " + std::to_string(chance));
     // Bad luck
     if(chance <= 3)
     {
@@ -60,8 +60,18 @@ int GameEngine::simulateDay(IPlayer* p)
             int result = gunFight(p);
             switch(result)
             {
-                
+                case -1:
+                    p->addHealth(-5);
+                    std::cout<<"Ouch! -5 Health!" << std::endl;
+                    break;
+                default:
+                    break;
             }
+        }
+
+        if(p->getHealth() == 0)
+        {
+            p->setPlayerAlive(false);
         }
         return 1;
     }

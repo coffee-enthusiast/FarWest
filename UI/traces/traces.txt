@@ -1,5 +1,27 @@
 =====FAR WEST TRACING=====
-2023-11-28.12:23:14 ["Trace.cpp"] > Action:
-2023-11-28.12:23:17 ["Trace.cpp"] > Action:
-2023-11-28.12:23:19 ["Trace.cpp"] > Action:
-2023-11-28.12:23:21 ["Trace.cpp"] > Bad luck!
+2023-11-28.12:35:23 ["Trace.cpp"] > Action:
+2023-11-28.12:35:28 ["Trace.cpp"] > Action:
+2023-11-28.12:35:29 ["Trace.cpp"] > Action:
+2023-11-28.12:35:30 ["Trace.cpp"] > Chance: 1
+2023-11-28.12:35:30 ["Trace.cpp"] > Bad luck!
+2023-11-28.12:35:30 ["Trace.cpp"] > Action:
+2023-11-28.12:35:32 ["Trace.cpp"] > Action:
+2023-11-28.12:35:34 ["Trace.cpp"] > Action:
+2023-11-28.12:35:34 ["Trace.cpp"] > Chance: 4
+2023-11-28.12:35:34 ["Trace.cpp"] > Action:
+2023-11-28.12:35:35 ["Trace.cpp"] > Action:
+2023-11-28.12:35:36 ["Trace.cpp"] > Action:
+2023-11-28.12:35:38 ["Trace.cpp"] > Chance: 7
+2023-11-28.12:35:38 ["Trace.cpp"] > Action:
+2023-11-28.12:35:40 ["Trace.cpp"] > Action:
+2023-11-28.12:35:40 ["Trace.cpp"] > Action:
+2023-11-28.12:35:41 ["Trace.cpp"] > Chance: 7
+2023-11-28.12:35:41 ["Trace.cpp"] > Action:
+2023-11-28.12:35:42 ["Trace.cpp"] > Action:
+2023-11-28.12:35:43 ["Trace.cpp"] > Action:
+2023-11-28.12:35:44 ["Trace.cpp"] > Chance: 7
+2023-11-28.12:35:44 ["Trace.cpp"] > Action:
+2023-11-28.12:35:45 ["Trace.cpp"] > Action:
+2023-11-28.12:35:45 ["Trace.cpp"] > Action:
+2023-11-28.12:35:46 ["Trace.cpp"] > Chance: 3
+2023-11-28.12:35:46 ["Trace.cpp"] > Bad luck!

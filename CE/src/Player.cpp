@@ -34,6 +34,11 @@ void Player::addHealth(int healthAmount)
         health = 0;
 }
 
+int Player::getHealth()
+{
+    return health;
+}
+
 void Player::addStamina(int staminaAmount)
 {
     stamina += staminaAmount;

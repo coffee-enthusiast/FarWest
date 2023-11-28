@@ -32,6 +32,7 @@ public:
     void printStats();
 
     void addHealth(int healthAmount);
+    int getHealth();
 
     void addStamina(int staminaAmount);
 
