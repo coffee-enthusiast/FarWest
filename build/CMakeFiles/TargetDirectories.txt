@@ -3,6 +3,11 @@ C:/Users/mario/Documents/Code/FarWest/build/CMakeFiles/package.dir
 C:/Users/mario/Documents/Code/FarWest/build/CMakeFiles/package_source.dir
 C:/Users/mario/Documents/Code/FarWest/build/CMakeFiles/edit_cache.dir
 C:/Users/mario/Documents/Code/FarWest/build/CMakeFiles/rebuild_cache.dir
+C:/Users/mario/Documents/Code/FarWest/build/UI/CMakeFiles/UI.dir
+C:/Users/mario/Documents/Code/FarWest/build/UI/CMakeFiles/package.dir
+C:/Users/mario/Documents/Code/FarWest/build/UI/CMakeFiles/package_source.dir
+C:/Users/mario/Documents/Code/FarWest/build/UI/CMakeFiles/edit_cache.dir
+C:/Users/mario/Documents/Code/FarWest/build/UI/CMakeFiles/rebuild_cache.dir
 C:/Users/mario/Documents/Code/FarWest/build/UF/CMakeFiles/UF.dir
 C:/Users/mario/Documents/Code/FarWest/build/UF/CMakeFiles/package.dir
 C:/Users/mario/Documents/Code/FarWest/build/UF/CMakeFiles/package_source.dir
@@ -26,8 +31,3 @@ C:/Users/mario/Documents/Code/FarWest/build/CE/CMakeFiles/package.dir
 C:/Users/mario/Documents/Code/FarWest/build/CE/CMakeFiles/package_source.dir
 C:/Users/mario/Documents/Code/FarWest/build/CE/CMakeFiles/edit_cache.dir
 C:/Users/mario/Documents/Code/FarWest/build/CE/CMakeFiles/rebuild_cache.dir
-C:/Users/mario/Documents/Code/FarWest/build/UI/CMakeFiles/UI.dir
-C:/Users/mario/Documents/Code/FarWest/build/UI/CMakeFiles/package.dir
-C:/Users/mario/Documents/Code/FarWest/build/UI/CMakeFiles/package_source.dir
-C:/Users/mario/Documents/Code/FarWest/build/UI/CMakeFiles/edit_cache.dir
-C:/Users/mario/Documents/Code/FarWest/build/UI/CMakeFiles/rebuild_cache.dir

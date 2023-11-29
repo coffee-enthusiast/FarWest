@@ -149,6 +149,19 @@ main/fast:
 .PHONY : main/fast
 
 #=============================================================================
+# Target rules for targets named UI
+
+# Build rule for target.
+UI: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 UI
+.PHONY : UI
+
+# fast build rule for target.
+UI/fast:
+	$(MAKE) $(MAKESILENT) -f UI\CMakeFiles\UI.dir\build.make UI/CMakeFiles/UI.dir/build
+.PHONY : UI/fast
+
+#=============================================================================
 # Target rules for targets named UF
 
 # Build rule for target.
@@ -186,19 +199,6 @@ CE: cmake_check_build_system
 CE/fast:
 	$(MAKE) $(MAKESILENT) -f CE\CMakeFiles\CE.dir\build.make CE/CMakeFiles/CE.dir/build
 .PHONY : CE/fast
-
-#=============================================================================
-# Target rules for targets named UI
-
-# Build rule for target.
-UI: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 UI
-.PHONY : UI
-
-# fast build rule for target.
-UI/fast:
-	$(MAKE) $(MAKESILENT) -f UI\CMakeFiles\UI.dir\build.make UI/CMakeFiles/UI.dir/build
-.PHONY : UI/fast
 
 main.obj: main.cpp.obj
 .PHONY : main.obj

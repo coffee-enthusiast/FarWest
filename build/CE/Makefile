@@ -221,6 +221,30 @@ src/Room.cpp.s:
 	cd /d C:\Users\mario\Documents\Code\FarWest\build && $(MAKE) $(MAKESILENT) -f CE\CMakeFiles\CE.dir\build.make CE/CMakeFiles/CE.dir/src/Room.cpp.s
 .PHONY : src/Room.cpp.s
 
+src/Skill.obj: src/Skill.cpp.obj
+.PHONY : src/Skill.obj
+
+# target to build an object file
+src/Skill.cpp.obj:
+	cd /d C:\Users\mario\Documents\Code\FarWest\build && $(MAKE) $(MAKESILENT) -f CE\CMakeFiles\CE.dir\build.make CE/CMakeFiles/CE.dir/src/Skill.cpp.obj
+.PHONY : src/Skill.cpp.obj
+
+src/Skill.i: src/Skill.cpp.i
+.PHONY : src/Skill.i
+
+# target to preprocess a source file
+src/Skill.cpp.i:
+	cd /d C:\Users\mario\Documents\Code\FarWest\build && $(MAKE) $(MAKESILENT) -f CE\CMakeFiles\CE.dir\build.make CE/CMakeFiles/CE.dir/src/Skill.cpp.i
+.PHONY : src/Skill.cpp.i
+
+src/Skill.s: src/Skill.cpp.s
+.PHONY : src/Skill.s
+
+# target to generate assembly for a file
+src/Skill.cpp.s:
+	cd /d C:\Users\mario\Documents\Code\FarWest\build && $(MAKE) $(MAKESILENT) -f CE\CMakeFiles\CE.dir\build.make CE/CMakeFiles/CE.dir/src/Skill.cpp.s
+.PHONY : src/Skill.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -241,6 +265,9 @@ help:
 	@echo ... src/Room.obj
 	@echo ... src/Room.i
 	@echo ... src/Room.s
+	@echo ... src/Skill.obj
+	@echo ... src/Skill.i
+	@echo ... src/Skill.s
 .PHONY : help
 
 

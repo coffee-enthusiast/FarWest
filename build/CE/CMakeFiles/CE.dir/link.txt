@@ -1,2 +1,2 @@
-C:\msys64\mingw64\bin\ar.exe qc libCE.a CMakeFiles/CE.dir/src/Home.cpp.obj CMakeFiles/CE.dir/src/Player.cpp.obj CMakeFiles/CE.dir/src/Room.cpp.obj
+C:\msys64\mingw64\bin\ar.exe qc libCE.a CMakeFiles/CE.dir/src/Home.cpp.obj CMakeFiles/CE.dir/src/Player.cpp.obj CMakeFiles/CE.dir/src/Room.cpp.obj CMakeFiles/CE.dir/src/Skill.cpp.obj
 C:\msys64\mingw64\bin\ranlib.exe libCE.a

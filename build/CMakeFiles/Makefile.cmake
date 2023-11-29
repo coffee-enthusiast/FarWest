@@ -51,19 +51,19 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "UI/CMakeFiles/CMakeDirectoryInformation.cmake"
   "UF/CMakeFiles/CMakeDirectoryInformation.cmake"
   "GE/CMakeFiles/CMakeDirectoryInformation.cmake"
   "GCE/CMakeFiles/CMakeDirectoryInformation.cmake"
   "FS/CMakeFiles/CMakeDirectoryInformation.cmake"
   "CE/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "UI/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/main.dir/DependInfo.cmake"
+  "UI/CMakeFiles/UI.dir/DependInfo.cmake"
   "UF/CMakeFiles/UF.dir/DependInfo.cmake"
   "GE/CMakeFiles/GE.dir/DependInfo.cmake"
   "CE/CMakeFiles/CE.dir/DependInfo.cmake"
-  "UI/CMakeFiles/UI.dir/DependInfo.cmake"
   )

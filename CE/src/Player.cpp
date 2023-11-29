@@ -11,6 +11,15 @@ Player::Player()
     maxStamina  = 5;
     numberOfGuns = 0;
     alive      = true;
+    skill1 = Skill(std::string("Mining"),2,30,100,10);
+    skill1.trainSkill(50);
+    skill1.trainSkill(50);
+
+    
+    skill2 = Skill(std::string("Shooting"),9,80,100,10);
+    skill2.trainSkill(50);
+    skill2.trainSkill(50);
+
 }
 
 void Player::printStats()

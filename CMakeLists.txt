@@ -3,12 +3,12 @@ cmake_minimum_required(VERSION 3.28.0)
 project(FarWest)
 
 # Include the subdirectories
+add_subdirectory(UI)
 add_subdirectory(UF)
 add_subdirectory(GE)
 add_subdirectory(GCE)
 add_subdirectory(FS)
 add_subdirectory(CE)
-add_subdirectory(UI)
 
 # Main executable
 add_executable(main main.cpp)

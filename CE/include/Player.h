@@ -2,6 +2,7 @@
 
 #include "Home.h"
 #include "../../UF/include/EntitiesInterfaces.h"
+#include "Skill.h"
 enum PlayerAction
 {
     WORK,
@@ -24,7 +25,8 @@ public:
     int numberOfGuns;
     bool alive;
     PlayerAction playerAction;
-
+    Skill skill1;
+    Skill skill2;
     Home playerHome;
 
     Player();

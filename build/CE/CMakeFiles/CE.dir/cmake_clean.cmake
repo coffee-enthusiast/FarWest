@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CE.dir/src/Player.cpp.obj.d"
   "CMakeFiles/CE.dir/src/Room.cpp.obj"
   "CMakeFiles/CE.dir/src/Room.cpp.obj.d"
+  "CMakeFiles/CE.dir/src/Skill.cpp.obj"
+  "CMakeFiles/CE.dir/src/Skill.cpp.obj.d"
   "libCE.a"
   "libCE.pdb"
 )

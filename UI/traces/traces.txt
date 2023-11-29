@@ -1,1 +1,12 @@
 =====FAR WEST TRACING=====
+2023-11-29.14:24:10 ["Trace.cpp"] > 1)Train Mining lvl: 2/10) Buff: (30/100)
+2023-11-29.14:24:10 ["Trace.cpp"] > Train for 50
+2023-11-29.14:24:10 ["Trace.cpp"] > 3)Train Mining lvl: 2/10Buff: (80/100
+2023-11-29.14:24:10 ["Trace.cpp"] > 1)Train Mining lvl: 2/10) Buff: (80/100)
+2023-11-29.14:24:10 ["Trace.cpp"] > Train for 50
+2023-11-29.14:24:10 ["Trace.cpp"] > 3)Train Mining lvl: 3/10Buff: (30/100
+2023-11-29.14:24:10 ["Trace.cpp"] > 1)Train Shooting lvl: 9/10) Buff: (80/100)
+2023-11-29.14:24:10 ["Trace.cpp"] > Train for 50
+2023-11-29.14:24:10 ["Trace.cpp"] > 2)Train Shooting lvl: 10/10Buff: (0/100
+2023-11-29.14:24:10 ["Trace.cpp"] > 1)Train Shooting lvl: 10/10) Buff: (0/100)
+2023-11-29.14:24:10 ["Trace.cpp"] > Train for 50

@@ -57,7 +57,7 @@ CE/CMakeFiles/CE.dir/src/Player.cpp.obj: \
  C:/msys64/mingw64/include/c++/13.1.0/tuple \
  C:/msys64/mingw64/include/c++/13.1.0/bits/invoke.h \
  C:/Users/mario/Documents/Code/FarWest/UF/include/EntitiesInterfaces.h \
- C:/Users/mario/Documents/Code/FarWest/UI/include/IOFunctions.h \
+ C:/Users/mario/Documents/Code/FarWest/CE/include/Skill.h \
  C:/msys64/mingw64/include/c++/13.1.0/string \
  C:/msys64/mingw64/include/c++/13.1.0/bits/stringfwd.h \
  C:/msys64/mingw64/include/c++/13.1.0/bits/char_traits.h \
@@ -104,6 +104,7 @@ CE/CMakeFiles/CE.dir/src/Player.cpp.obj: \
  C:/msys64/mingw64/include/c++/13.1.0/cerrno \
  C:/msys64/mingw64/include/c++/13.1.0/bits/charconv.h \
  C:/msys64/mingw64/include/c++/13.1.0/bits/basic_string.tcc \
+ C:/Users/mario/Documents/Code/FarWest/UI/include/IOFunctions.h \
  C:/Users/mario/Documents/Code/FarWest/UF/include/ActionAttributes.h \
  C:/msys64/mingw64/include/c++/13.1.0/iostream \
  C:/msys64/mingw64/include/c++/13.1.0/ostream \

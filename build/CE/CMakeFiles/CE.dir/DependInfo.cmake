@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/mario/Documents/Code/FarWest/CE/src/Home.cpp" "CE/CMakeFiles/CE.dir/src/Home.cpp.obj" "gcc" "CE/CMakeFiles/CE.dir/src/Home.cpp.obj.d"
   "C:/Users/mario/Documents/Code/FarWest/CE/src/Player.cpp" "CE/CMakeFiles/CE.dir/src/Player.cpp.obj" "gcc" "CE/CMakeFiles/CE.dir/src/Player.cpp.obj.d"
   "C:/Users/mario/Documents/Code/FarWest/CE/src/Room.cpp" "CE/CMakeFiles/CE.dir/src/Room.cpp.obj" "gcc" "CE/CMakeFiles/CE.dir/src/Room.cpp.obj.d"
+  "C:/Users/mario/Documents/Code/FarWest/CE/src/Skill.cpp" "CE/CMakeFiles/CE.dir/src/Skill.cpp.obj" "gcc" "CE/CMakeFiles/CE.dir/src/Skill.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -113,11 +113,27 @@ CE/CMakeFiles/CE.dir/src/Room.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CE.dir/src/Room.cpp.s"
 	cd /d C:\Users\mario\Documents\Code\FarWest\build\CE && C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\mario\Documents\Code\FarWest\CE\src\Room.cpp -o CMakeFiles\CE.dir\src\Room.cpp.s
 
+CE/CMakeFiles/CE.dir/src/Skill.cpp.obj: CE/CMakeFiles/CE.dir/flags.make
+CE/CMakeFiles/CE.dir/src/Skill.cpp.obj: CE/CMakeFiles/CE.dir/includes_CXX.rsp
+CE/CMakeFiles/CE.dir/src/Skill.cpp.obj: C:/Users/mario/Documents/Code/FarWest/CE/src/Skill.cpp
+CE/CMakeFiles/CE.dir/src/Skill.cpp.obj: CE/CMakeFiles/CE.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CE/CMakeFiles/CE.dir/src/Skill.cpp.obj"
+	cd /d C:\Users\mario\Documents\Code\FarWest\build\CE && C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CE/CMakeFiles/CE.dir/src/Skill.cpp.obj -MF CMakeFiles\CE.dir\src\Skill.cpp.obj.d -o CMakeFiles\CE.dir\src\Skill.cpp.obj -c C:\Users\mario\Documents\Code\FarWest\CE\src\Skill.cpp
+
+CE/CMakeFiles/CE.dir/src/Skill.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CE.dir/src/Skill.cpp.i"
+	cd /d C:\Users\mario\Documents\Code\FarWest\build\CE && C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\mario\Documents\Code\FarWest\CE\src\Skill.cpp > CMakeFiles\CE.dir\src\Skill.cpp.i
+
+CE/CMakeFiles/CE.dir/src/Skill.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CE.dir/src/Skill.cpp.s"
+	cd /d C:\Users\mario\Documents\Code\FarWest\build\CE && C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\mario\Documents\Code\FarWest\CE\src\Skill.cpp -o CMakeFiles\CE.dir\src\Skill.cpp.s
+
 # Object files for target CE
 CE_OBJECTS = \
 "CMakeFiles/CE.dir/src/Home.cpp.obj" \
 "CMakeFiles/CE.dir/src/Player.cpp.obj" \
-"CMakeFiles/CE.dir/src/Room.cpp.obj"
+"CMakeFiles/CE.dir/src/Room.cpp.obj" \
+"CMakeFiles/CE.dir/src/Skill.cpp.obj"
 
 # External object files for target CE
 CE_EXTERNAL_OBJECTS =
@@ -125,9 +141,10 @@ CE_EXTERNAL_OBJECTS =
 CE/libCE.a: CE/CMakeFiles/CE.dir/src/Home.cpp.obj
 CE/libCE.a: CE/CMakeFiles/CE.dir/src/Player.cpp.obj
 CE/libCE.a: CE/CMakeFiles/CE.dir/src/Room.cpp.obj
+CE/libCE.a: CE/CMakeFiles/CE.dir/src/Skill.cpp.obj
 CE/libCE.a: CE/CMakeFiles/CE.dir/build.make
 CE/libCE.a: CE/CMakeFiles/CE.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libCE.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\mario\Documents\Code\FarWest\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libCE.a"
 	cd /d C:\Users\mario\Documents\Code\FarWest\build\CE && $(CMAKE_COMMAND) -P CMakeFiles\CE.dir\cmake_clean_target.cmake
 	cd /d C:\Users\mario\Documents\Code\FarWest\build\CE && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CE.dir\link.txt --verbose=$(VERBOSE)
 
