@@ -1,6 +1,7 @@
 #include "GameEngine.h"
 #include "../../UF/include/PlayerFactory.h"
 #include <iostream>
+#include <time.h> 
 #include "../../UI/include/IOFunctions.h"
 #include "../../UI/include/Trace.h"
 
@@ -8,6 +9,7 @@ GameEngine::GameEngine()
 {
     IPlayer* player = PlayerFactory::createPlayer();
     currDay = 1;
+    InitUI();
     fOut("Welcome cowboy!");
 
     while(player->getPlayerAction() != 5 && player->isPlayerAlive() == true)
@@ -37,20 +39,31 @@ GameEngine::GameEngine()
 
 }
 
+//  Simulates gunfight
+//  returns -1 if player loses
 int GameEngine::gunFight(IPlayer* p)
 {
-    return -1;
+    srand(time(0));
+    int chance = rand() % 10;
+    if(chance <= p->getShootingSkillLevel())
+    {
+        fOut("You Win!");
+        return 0;
+    }
+    else
+    {
+        fOutWarn("You Lose!");
+        return -1;
+    }
 }
 
 int GameEngine::simulateDay(IPlayer* p)
 {
     srand(time(0));
     int chance = rand() % 10;
-    fTrace("Chance: " + std::to_string(chance));
     // Bad luck
     if(chance <= 3)
     {
-        fTrace("Bad luck!");
         fOutWarn("!Bad luck!");
         if(p->getNumberOfGuns() == 0)
         {

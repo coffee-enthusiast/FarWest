@@ -15,3 +15,13 @@ inline int workStamina = -2;
 inline int workMoney   = 2;
 
 inline int gunCost = 5;
+
+enum PlayerAction
+{
+    WORK,
+    DRINK,
+    EAT,
+    BUY_GUN,
+    SLEEP,
+    EXIT
+};

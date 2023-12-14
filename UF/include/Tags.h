@@ -1,0 +1,5 @@
+enum SkillTag
+{
+    MINING,
+    SHOOTING
+};

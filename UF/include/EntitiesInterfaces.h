@@ -1,4 +1,5 @@
 #pragma once
+#include "Tags.h"
 class IPlayer
 {
 public:
@@ -12,5 +13,19 @@ public:
     virtual void    goToSleep()         = 0;
     virtual int     getNumberOfGuns()   = 0;
     virtual void    addHealth(int healthAmount)         = 0;
-    virtual int    getHealth()         = 0;
+    virtual int     getHealth()         = 0;
+    virtual int     getShootingSkillLevel()  = 0;
+    virtual void    useSkill(SkillTag skill) = 0;
+};
+
+class IInteractable
+{
+public:
+    virtual void Interact();
+};
+
+class IConsumable
+{
+public:
+    virtual void Consume();
 };

@@ -27,7 +27,7 @@ enable_testing()
 add_subdirectory(external/googletest)
 
 # Link each component's tests with Google Test
-add_executable(comp1Tests tests/test1.cpp)
+add_executable(comp1Tests tests/ItemTest.cpp)
 target_link_libraries(comp1Tests gtest gtest_main UI CE) # Link with comp1 library
 target_include_directories(comp1Tests PUBLIC UI/include  CE/include)
 

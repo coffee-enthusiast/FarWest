@@ -59,6 +59,11 @@ enum COLORS
 	BACK_LIGHTRED=0xC0, BACK_LIGHTMAGENTA=0xD0, BACK_YELLOW=0xE0, BACK_WHITE=0xF0,
 };
 
+void InitUI()
+{
+	SetConsoleTextAttribute ( GetStdHandle(STD_OUTPUT_HANDLE), (TEXT_WHITE + BACK_BLACK));
+}
+
 void fOut(std::string message)
 {
     printf("%s\n", message.c_str());
@@ -66,27 +71,31 @@ void fOut(std::string message)
 
 void fOutWarn(std::string message)
 {
-    HANDLE h = GetStdHandle ( STD_OUTPUT_HANDLE );
-	WORD wOldColorAttrs;
-	CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
 
-	/*
-	* First save the current color information
-	*/
-	GetConsoleScreenBufferInfo(h, &csbiInfo);
-	wOldColorAttrs = csbiInfo.wAttributes;
-	
 	/*
 	* Set the new color information
 	*/
-	SetConsoleTextAttribute ( h, TEXT_RED);
+	SetConsoleTextAttribute ( GetStdHandle(STD_OUTPUT_HANDLE), (TEXT_RED + BACK_BLACK));
 	printf ( "%s\n", message.c_str());
     /*
 	* Restore the original colors
 	*/
-	SetConsoleTextAttribute ( h, wOldColorAttrs);
+    
+    InitUI();
 }
-
+void fOutSucc(std::string message)
+{
+    /*
+	* Set the new color information
+	*/
+	SetConsoleTextAttribute ( GetStdHandle(STD_OUTPUT_HANDLE), (TEXT_GREEN + BACK_BLACK));
+	printf ( "%s\n", message.c_str());
+    /*
+	* Restore the original colors
+	*/
+    
+    InitUI();
+}
 void processInput(IPlayer* p)
 {
     switch(playerInput)

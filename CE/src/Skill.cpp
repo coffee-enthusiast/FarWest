@@ -17,11 +17,11 @@ Skill::Skill(std::string skillName, int skillLevel, int skillBufferAmount, int s
 
 void Skill::trainSkill(int amount)
 {
-    fTrace("Train "+ skillName+" for " + std::to_string(amount));
     // Can't train it any more
     if(skillLevel == maxSkillLevel)
         return;
 
+    fTrace("Train "+ skillName+" for " + std::to_string(amount));
     skillBufferAmount += amount;
     if(skillBufferAmount >= skillBufferMax)
     {

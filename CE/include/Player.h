@@ -3,30 +3,28 @@
 #include "Home.h"
 #include "../../UF/include/EntitiesInterfaces.h"
 #include "Skill.h"
-enum PlayerAction
+#include "Item.h"
+#include "../../UF/include/ActionAttributes.h"
+
+enum AttributeTag
 {
-    WORK,
-    DRINK,
-    EAT,
-    BUY_GUN,
-    SLEEP,
-    EXIT
+    MONEY,
+    HP, //  Health Points
+    SP,  //  Stamina Points
 };
 
 class Player : public IPlayer
 {
 public:
 
-    int money;
-    int health;
     int maxHealth;
-    int stamina;
     int maxStamina;
     int numberOfGuns;
+    int playerAttributes[3];
     bool alive;
     PlayerAction playerAction;
-    Skill skill1;
-    Skill skill2;
+    Skill miningSkill;
+    Skill shootingSkill;
     Home playerHome;
 
     Player();
@@ -38,14 +36,17 @@ public:
 
     void addStamina(int staminaAmount);
 
-    void simulateAction();    
 
     void goToSleep();
 
+    void Consume(Item item);
     //  IPlayer methods
+    void    simulateAction();    
     int     getPlayerAction();
     void     setPlayerAction(int action);
     bool    isPlayerAlive();
     void    setPlayerAlive(bool alive);
     int     getNumberOfGuns();
+    int     getShootingSkillLevel();
+    void    useSkill(SkillTag skill);
 };
