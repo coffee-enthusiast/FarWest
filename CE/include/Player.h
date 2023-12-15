@@ -5,12 +5,25 @@
 #include "Skill.h"
 #include "Item.h"
 #include "../../UF/include/ActionAttributes.h"
+#include <vector>
 
 enum AttributeTag
 {
     MONEY,
     HP, //  Health Points
     SP,  //  Stamina Points
+};
+
+class Inventory
+{
+public:
+    std::vector<Item*> items;
+    int maxItems;
+    Inventory();
+    Inventory(std::vector<Item*> items, int maxItems);
+    bool AddItem(Item* item);
+    void DeleteItem(int pos);
+    std::string PrintInventory();
 };
 
 class Player : public IPlayer
@@ -26,6 +39,7 @@ public:
     Skill miningSkill;
     Skill shootingSkill;
     Home playerHome;
+    Inventory playerInventory;
 
     Player();
 

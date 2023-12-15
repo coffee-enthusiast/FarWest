@@ -21,6 +21,7 @@ int main(int argc, char* argv[])
     {
         isTracingActive = true;
         InitTracing();
+        std::cout << "tracing" << std::endl;
     }
     else
     {

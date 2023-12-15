@@ -96,6 +96,7 @@ void fOutSucc(std::string message)
     
     InitUI();
 }
+
 void processInput(IPlayer* p)
 {
     switch(playerInput)

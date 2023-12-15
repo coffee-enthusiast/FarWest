@@ -1,9 +1,63 @@
 #include "Player.h"
 #include "../../UI/include/IOFunctions.h"
+#include "../../UI/include/Trace.h"
 #include "../../UF/include/ActionAttributes.h"
 #include <iostream>
 #include <time.h>
 #include <string>
+
+Inventory::Inventory()
+{
+    this->maxItems = 5;
+}
+
+Inventory::Inventory(std::vector<Item*> items, int maxItems)
+{
+    this->items = items;
+    this->maxItems = maxItems;
+}
+
+bool Inventory::AddItem(Item* item)
+{
+    if(items.size() == maxItems)
+        return false;
+
+    items.push_back(item);
+    return true;
+}
+
+void Inventory::DeleteItem(int pos)
+{
+    if(items.size() == 0 || pos >= items.size())
+        return;
+    
+    items.erase(items.begin() + pos);
+}
+
+std::string Inventory::PrintInventory()
+{
+    std::string str;
+    for(int i = 0; i < maxItems; i++)
+    {
+
+        str += std::to_string(i) + "| ";
+        if(i >= items.size())
+        {
+            str += " _\n";
+            continue;
+        }
+
+        str += items[i]->itemName + "\t" + std::to_string((ItemType)items[i]->itemType) + " ";
+
+        for(std::pair<int,int> gain : items[i]->gains)
+        {
+            str += std::to_string(gain.second) + " " + std::to_string((AttributeTag)gain.first);
+        }
+        str += "\n";
+    }
+
+    return str;
+}
 
 Player::Player()
 {
@@ -14,6 +68,8 @@ Player::Player()
     playerAttributes[MONEY] = 5;
     playerAttributes[HP] = 10;
     playerAttributes[SP] = 5;
+    playerInventory = Inventory();
+
     miningSkill = Skill(std::string("Mining"),2,30,100,10);
     shootingSkill = Skill(std::string("Shooting"),5,80,100,10);
 }
@@ -28,6 +84,11 @@ void Player::printStats()
     fOut("\tHealth: " + std::to_string(playerAttributes[HP]) + "/" + std::to_string(maxHealth));
     fOut("\tStamina: " + std::to_string(playerAttributes[SP]) + "/" + std::to_string(maxStamina));
     fOut("\tNo of guns: " + std::to_string(numberOfGuns));
+    fOut("=============");
+
+    fOut("Player Inventory:");
+    fOut("=============");
+    fOut(playerInventory.PrintInventory());
     fOut("--------------------------");
 }
 
@@ -97,10 +158,12 @@ void Player::simulateAction()
             }
             std::vector<std::pair<int,int>> gains;
             gains.push_back(std::make_pair(SP, drinkStamina));
-            Item drink = Item("Cola", CONSUMABLE, gains);
+            Item* drink = new Item("Cola", CONSUMABLE, gains);
 
-            playerAttributes[MONEY] -= drinkCost;
-            Consume(drink);
+            if(playerInventory.AddItem(drink))
+                playerAttributes[MONEY] -= drinkCost;
+
+            Consume(*drink);
 
             fOut("Got a drink!");
             fOutWarn("\t- " + std::to_string(drinkCost) + "$");
@@ -117,10 +180,10 @@ void Player::simulateAction()
             std::vector<std::pair<int,int>> gains;
             gains.push_back(std::make_pair(HP, foodHealth));
             gains.push_back(std::make_pair(SP, foodStamina));
-            Item beans = Item("BEANS", CONSUMABLE, gains);
-
-            playerAttributes[MONEY] -= foodCost;
-            Consume(beans);
+            Item* beans = new Item("BEANS", CONSUMABLE, gains);
+            if(playerInventory.AddItem(beans))
+                playerAttributes[MONEY] -= foodCost;
+            Consume(*beans);
 
             fOut("Ate food!");
             fOutWarn("\t-" + std::to_string(foodCost) + "$");
