@@ -23,6 +23,8 @@ public:
     Inventory(std::vector<Item*> items, int maxItems);
     bool AddItem(Item* item);
     void DeleteItem(int pos);
+    int GetFreeCapacity();
+    int GetCapacity();
     std::string PrintInventory();
 };
 
@@ -33,7 +35,7 @@ public:
     int maxHealth;
     int maxStamina;
     int numberOfGuns;
-    int playerAttributes[3];
+    float playerAttributes[3];
     bool alive;
     PlayerAction playerAction;
     Skill miningSkill;

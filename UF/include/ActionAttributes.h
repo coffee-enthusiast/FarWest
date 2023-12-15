@@ -23,5 +23,6 @@ enum PlayerAction
     EAT,
     BUY_GUN,
     SLEEP,
-    EXIT
+    EXIT,
+    ACCESS_INVENTORY
 };

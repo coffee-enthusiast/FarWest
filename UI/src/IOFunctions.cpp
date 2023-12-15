@@ -15,8 +15,8 @@ void prompt()
         << "Press 3: Eat Beans\t(+2 Stamina, +2 Health, -$2)" << std::endl
         << "Press 4: Buy Gun\t(+1 Gun,\t-$5)" << std::endl
         << "Press 5: Sleep\t\t(+" << sleepStamina <<" Stamina,\t+"<<sleepHealth<<" Health)" << std::endl
-        << "Press 6: Exit" << std::endl;
-        
+        << "Press 6: Exit" << std::endl
+        << "Press 7[index]: Use item from inventory" << std::endl;
     std::cout << "-----------------------------------------------------" << std::endl;
 }
 
@@ -25,26 +25,6 @@ void fInInt(int* storeInput)
     std::cin >> (*storeInput);
     return;
 }
-/*
-The different color codes are
-
-0   BLACK
-1   BLUE
-2   GREEN
-3   CYAN
-4   RED
-5   MAGENTA
-6   BROWN
-7   LIGHTGRAY
-8   DARKGRAY
-9   LIGHTBLUE
-10  LIGHTGREEN
-11  LIGHTCYAN
-12  LIGHTRED
-13  LIGHTMAGENTA
-14  YELLOW
-15  WHITE
-*/
 
 enum COLORS
 {

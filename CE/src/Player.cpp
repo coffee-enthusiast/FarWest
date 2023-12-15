@@ -6,6 +6,7 @@
 #include <time.h>
 #include <string>
 
+#include "Shop.h"
 Inventory::Inventory()
 {
     this->maxItems = 5;
@@ -32,6 +33,16 @@ void Inventory::DeleteItem(int pos)
         return;
     
     items.erase(items.begin() + pos);
+}
+
+int Inventory::GetFreeCapacity()
+{
+    return (maxItems - items.size());
+}
+
+int Inventory::GetCapacity()
+{
+    return maxItems;
 }
 
 std::string Inventory::PrintInventory()
@@ -150,45 +161,46 @@ void Player::simulateAction()
             fOutWarn("\t" + std::to_string(workStamina) + " St.");
             fOutSucc("\t+ " + std::to_string(amount) + "$");
             break;
-        case (PlayerAction)DRINK:{
-            if(playerAttributes[MONEY] < drinkCost)
+        case (PlayerAction)DRINK:
+        {
+            if(playerInventory.GetFreeCapacity() < 1)
+            {
+                fOutWarn("Not enough inventory capacity to buy drink!");
+                break;
+            }
+            Shop s = Shop();
+            Item* drink = s.BuyItem(0, &playerAttributes[MONEY]);
+            if(drink == nullptr)
             {
                 fOutWarn("Not enough money to buy drink!");
                 break;
             }
-            std::vector<std::pair<int,int>> gains;
-            gains.push_back(std::make_pair(SP, drinkStamina));
-            Item* drink = new Item("Cola", CONSUMABLE, gains);
 
-            if(playerInventory.AddItem(drink))
-                playerAttributes[MONEY] -= drinkCost;
-
-            Consume(*drink);
+            playerInventory.AddItem(drink);
 
             fOut("Got a drink!");
-            fOutWarn("\t- " + std::to_string(drinkCost) + "$");
-            fOutSucc("\t+ " + std::to_string(drinkStamina) + " St.");
+            fOutWarn("\t- " + std::to_string(s.GetPriceItem(0)) + "$");
             break;
         }
-        case (PlayerAction)EAT:{
-            if(playerAttributes[MONEY] < foodCost)
+        case (PlayerAction)EAT:
+        {
+            if(playerInventory.GetFreeCapacity() < 1)
+            {
+                fOutWarn("Not enough inventory capacity to buy food!");
+                break;
+            }
+
+            Shop s = Shop();
+            Item* beans = s.BuyItem(1, &playerAttributes[MONEY]);
+            if(beans == nullptr)
             {
                 fOutWarn("Not enough money to buy food!");
                 break;
             }
-            
-            std::vector<std::pair<int,int>> gains;
-            gains.push_back(std::make_pair(HP, foodHealth));
-            gains.push_back(std::make_pair(SP, foodStamina));
-            Item* beans = new Item("BEANS", CONSUMABLE, gains);
-            if(playerInventory.AddItem(beans))
-                playerAttributes[MONEY] -= foodCost;
-            Consume(*beans);
+            playerInventory.AddItem(beans);
 
             fOut("Ate food!");
-            fOutWarn("\t-" + std::to_string(foodCost) + "$");
-            fOutSucc("\t+" + std::to_string(foodHealth) + " HP");
-            fOutSucc("\t+" + std::to_string(foodStamina) + " St.");
+            fOutWarn("\t- " + std::to_string(s.GetPriceItem(1)) + "$");
             break;
         }
         case (PlayerAction)BUY_GUN:
@@ -207,6 +219,10 @@ void Player::simulateAction()
             fOut("Went for sleep!");
             goToSleep();
             break;
+        case (PlayerAction)ACCESS_INVENTORY:
+            if(playerInventory.GetCapacity() == 0)
+                break;
+            Consume(*playerInventory.items[0]);
         default:
             break;
     }
