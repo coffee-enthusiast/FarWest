@@ -26,6 +26,9 @@ public:
     int GetFreeCapacity();
     int GetCapacity();
     std::string PrintInventory();
+    int GetNumberOfItems(ItemCategory itemCategory);
+    Item* GetItem(ItemCategory itemCategory);
+    Item* GetItem(ItemSubCategory itemSubCategory);
 };
 
 class Player : public IPlayer
@@ -41,7 +44,8 @@ public:
     Skill miningSkill;
     Skill shootingSkill;
     Home playerHome;
-    Inventory playerInventory;
+    Inventory itemsInventory;
+    Inventory gunsInventory;
 
     Player();
 
@@ -63,6 +67,6 @@ public:
     bool    isPlayerAlive();
     void    setPlayerAlive(bool alive);
     int     getNumberOfGuns();
-    int     getShootingSkillLevel();
+    int     getDamage();
     void    useSkill(SkillTag skill);
 };

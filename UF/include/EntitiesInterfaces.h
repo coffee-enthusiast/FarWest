@@ -14,7 +14,7 @@ public:
     virtual int     getNumberOfGuns()   = 0;
     virtual void    addHealth(int healthAmount)         = 0;
     virtual int     getHealth()         = 0;
-    virtual int     getShootingSkillLevel()  = 0;
+    virtual int     getDamage()  = 0;
     virtual void    useSkill(SkillTag skill) = 0;
 };
 
