@@ -18,6 +18,12 @@ public:
     virtual void    useSkill(SkillTag skill) = 0;
 };
 
+class IEntity
+{
+public:
+    
+};
+
 class IInteractable
 {
 public:
