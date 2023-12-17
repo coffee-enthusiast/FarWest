@@ -1,4 +1,5 @@
 #include "GameEngine.h"
+#include "../include/Map.h"
 #include "../../UF/include/PlayerFactory.h"
 #include <iostream>
 #include <time.h> 
@@ -7,7 +8,12 @@
 
 GameEngine::GameEngine()
 {
+    Map* worldMap = new Map();
     IPlayer* player = PlayerFactory::createPlayer();
+    std::vector<IPlace*> places;
+    places.push_back(HomeFactory::createHome(worldMap));
+    worldMap->SetPlaces(places);
+    worldMap->ChangePlace(0);
     currDay = 1;
     InitUI();
     fOut("Welcome cowboy!");
@@ -17,7 +23,7 @@ GameEngine::GameEngine()
         fOut("Day: " + std::to_string(currDay));
         currDay++;
         player->printStats();
-        prompt();
+        worldMap->currentPlace->PromptInput();
         for(int i = 0; i < 3; i++)
         {
             fOut("Action(" + std::to_string((i+1)) + "/3):");

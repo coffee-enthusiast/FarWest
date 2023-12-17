@@ -1,5 +1,6 @@
 #include "../include/Shop.h"
 
+#include "../../UI/include/IOFunctions.h"
 Shop::Shop()
 {
     std::vector<std::pair<int,int>> gains;
@@ -46,4 +47,48 @@ float Shop::GetPriceItem(int position)
         return -1;
     
     return this->sellingItems[position].second;
+}
+
+ShopPlace::ShopPlace(IMap* map)
+{
+    this->map = map;
+    this->placeTag = HOME;
+}
+
+//  Place virtual methods
+void ShopPlace::EnterPlace()
+{
+    fOut("==========SHOP==========");
+}
+
+void ShopPlace::PromptInput()
+{
+    fOut("Press 1: Buy");
+    fOut("Press 2: Sell");
+    fOut("Press 3: Leave Shop");
+}
+
+void ShopPlace::ReadInput()
+{
+    int input = -1;
+
+    fInInt(&input);
+
+    switch(input)
+    {
+        case 1: //  Buy
+            break;
+        case 2: //  Sell
+            break;
+        case 3: //  Leave
+            break;
+        default:
+            break;
+    }
+}
+
+void ShopPlace::ExitPlace()
+{
+
+    fOut("==========LEAVING SHOP==========");
 }

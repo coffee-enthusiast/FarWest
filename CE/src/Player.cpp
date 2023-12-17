@@ -196,28 +196,7 @@ void Player::simulateAction()
             fOutWarn("\t" + std::to_string(workStamina) + " St.");
             fOutSucc("\t+ " + std::to_string(amount) + "$");
             break;
-        case (PlayerAction)DRINK:
-        {
-            if(itemsInventory.GetFreeCapacity() < 1)
-            {
-                fOutWarn("Not enough inventory capacity to buy drink!");
-                break;
-            }
-            Shop s = Shop();
-            Item* drink = s.BuyItem(0, &playerAttributes[MONEY]);
-            if(drink == nullptr)
-            {
-                fOutWarn("Not enough money to buy drink!");
-                break;
-            }
-
-            itemsInventory.AddItem(drink);
-
-            fOut("Got a drink!");
-            fOutWarn("\t- " + std::to_string(s.GetPriceItem(0)) + "$");
-            break;
-        }
-        case (PlayerAction)EAT:
+        case (PlayerAction)CONSUME:
         {
             if(itemsInventory.GetFreeCapacity() < 1)
             {

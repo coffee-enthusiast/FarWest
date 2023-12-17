@@ -1,30 +1,21 @@
+#pragma once
 #include <vector>
+#include "../../UF/include/EntitiesInterfaces.h"
 
-enum PlaceTag
-{
-    HOME,
-    SHOP,
-    MINE,
-};
-
-class Place
-{
-public:
-    Place(Map* map);
-    Map* map;
-    PlaceTag placeTag;
-    virtual void EnterPlace();
-    virtual void PromptInput();
-    virtual void ReadInput();
-    virtual void ExitPlace();
-};
-
-class Map
+class Map : public IMap
 {
 public:
     std::vector<int>* routes;
-    Place* places[3];
+    std::vector<IPlace*> places;
+    IPlace* currentPlace;
+
     Map();
-    Place* currentPlace;
+
+    void SetPlaces(std::vector<IPlace*> places);
     void ChangePlace(int nextPlace);
 };
+
+
+
+
+

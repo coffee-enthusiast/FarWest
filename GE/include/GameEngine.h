@@ -1,4 +1,3 @@
-
 #include "../../UF/include/EntitiesInterfaces.h"
 #include "../include/Map.h"
 

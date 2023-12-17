@@ -12,3 +12,16 @@ public:
     Item* BuyItem(int position, float* playerCash);
     float GetPriceItem(int position);
 };
+
+
+class ShopPlace: public IPlace
+{
+public:
+    ShopPlace(IMap* map);
+
+    //  Place virtual methods
+    void EnterPlace();
+    void PromptInput();
+    void ReadInput();
+    void ExitPlace();
+};

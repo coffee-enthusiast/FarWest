@@ -12,8 +12,7 @@ inline int gunCost = 5;
 enum PlayerAction
 {
     WORK,
-    DRINK,
-    EAT,
+    CONSUME,
     BUY_GUN,
     SLEEP,
     EXIT,

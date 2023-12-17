@@ -12,15 +12,20 @@ Map::Map()
     routes[MINE].push_back(HOME);
     routes[MINE].push_back(SHOP);
 
-    places[HOME] = new Place(this);
-    places[SHOP] = new Place(this);
-    places[MINE] = new Place(this);
+
+}
+void Map::SetPlaces(std::vector<IPlace*> places)
+{
+    this->places = places;
+
+    currentPlace = nullptr;
 
 }
 
 void Map::ChangePlace(int place)
 {
-    currentPlace->ExitPlace();
+    if(currentPlace != nullptr)
+        currentPlace->ExitPlace();
 
     currentPlace = places[place];
 
