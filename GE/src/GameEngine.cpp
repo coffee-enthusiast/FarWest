@@ -9,11 +9,16 @@
 GameEngine::GameEngine()
 {
     Map* worldMap = new Map();
-    IPlayer* player = PlayerFactory::createPlayer();
+    IPlayer* player = Factories::createPlayer();
+
     std::vector<IPlace*> places;
-    places.push_back(HomeFactory::createHome(worldMap));
+    places.push_back(Factories::createHome(worldMap));
+    places.push_back(Factories::createShop(worldMap));
+    places.push_back(Factories::createMine(worldMap));
+
     worldMap->SetPlaces(places);
     worldMap->ChangePlace(0);
+    
     currDay = 1;
     InitUI();
     fOut("Welcome cowboy!");
