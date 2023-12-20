@@ -43,13 +43,16 @@ int GameEngine::gunFight(IPlayer* p)
 {
     srand(time(0));
     int chance = rand() % 10;
-    if(chance <= p->getDamage())
+    if(chance <= p->getShootingDamage())
     {
+        
+        p->useSkill(SHOOTING);
         fOut("You Win!");
         return 0;
     }
     else
     {
+        p->useSkill(SHOOTING);
         fOutWarn("You Lose!");
         return -1;
     }

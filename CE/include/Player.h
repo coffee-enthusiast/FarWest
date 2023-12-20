@@ -44,8 +44,8 @@ public:
     Skill miningSkill;
     Skill shootingSkill;
     Home playerHome;
-    Inventory itemsInventory;
-    Inventory gunsInventory;
+    Inventory* itemsInventory;
+    Inventory* gunsInventory;
 
     Player();
 
@@ -67,6 +67,8 @@ public:
     bool    isPlayerAlive();
     void    setPlayerAlive(bool alive);
     int     getNumberOfGuns();
-    int     getDamage();
+    int     getShootingDamage();
+    int     getMiningDamage();
     void    useSkill(SkillTag skill);
+    void    addItem(Item* item);
 };

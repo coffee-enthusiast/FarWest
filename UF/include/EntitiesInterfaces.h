@@ -1,6 +1,9 @@
 #pragma once
 #include <vector>
 #include "Tags.h"
+#include "../../CE/include/Item.h"
+class Item;
+
 class IPlayer
 {
 public:
@@ -15,8 +18,10 @@ public:
     virtual int     getNumberOfGuns()   = 0;
     virtual void    addHealth(int healthAmount)         = 0;
     virtual int     getHealth()         = 0;
-    virtual int     getDamage()  = 0;
+    virtual int     getShootingDamage()  = 0;
+    virtual int     getMiningDamage()  = 0;
     virtual void    useSkill(SkillTag skill) = 0;
+    virtual void    addItem(Item* item) = 0;
 };
 
 class IEntity

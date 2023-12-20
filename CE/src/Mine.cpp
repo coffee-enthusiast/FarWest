@@ -1,15 +1,35 @@
 #include "../include/Mine.h"
 #include "../../UI/include/IOFunctions.h"
+#include <time.h>
 
 Mine::Mine(int amountLeft, int totalAmount)
 {
     this->amountLeft = amountLeft;
     this->totalAmount = totalAmount;
 }
+
+Item* Mine::Work(int miningDamage)
+{
+    if(amountLeft == 0)
+        return nullptr;
+
+    srand(time(0));
+    amountLeft -= miningDamage;
+    if(amountLeft < 0)
+        amountLeft = 0;
+
+    int randomRock = rand() % 3;
+    Item* rock = new Item(std::string("Rock"), USABLE, (ItemCategory)ROCK, (ItemSubCategory) (6 + randomRock), std::vector<std::pair<int,int>>());
+    return rock;
+}
+
 MinePlace::MinePlace(IMap* map)
 {
     this->map = map;
     this->placeTag = MINE;
+
+    this->mine = new Mine(100,100);
+
 }
 
 std::vector<int> MinePlace::PrintRoutes()
@@ -53,7 +73,18 @@ void MinePlace::ReadInput()
     switch(input)
     {
         case 1: //  Work
+        {
+            Item* rock = mine->Work(player->getMiningDamage());
+            if(rock == nullptr)
+            {
+                fOut("Work didn't go as planned!");
+                return;
+            }
+            fOut("Earned a " + std::to_string(rock->itemSubCategory) + " " + rock->itemName);
+            player->useSkill(MINING);
+            player->addItem(rock);
             break;
+        }
         case 2: //  Leave
         {
             std::vector<int> choose = PrintRoutes();

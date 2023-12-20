@@ -113,8 +113,8 @@ Player::Player()
     playerAttributes[MONEY] = 5;
     playerAttributes[HP] = 10;
     playerAttributes[SP] = 5;
-    itemsInventory = Inventory();
-    gunsInventory = Inventory();
+    itemsInventory = new Inventory();
+    gunsInventory = new Inventory();
 
     miningSkill = Skill(std::string("Mining"),2,30,100,10);
     shootingSkill = Skill(std::string("Shooting"),5,80,100,10);
@@ -134,7 +134,7 @@ void Player::printStats()
 
     fOut("Player Inventory:");
     fOut("=============");
-    fOut(itemsInventory.PrintInventory());
+    fOut(itemsInventory->PrintInventory());
     fOut("--------------------------");
 }
 
@@ -198,7 +198,7 @@ void Player::simulateAction()
             break;
         case (PlayerAction)CONSUME:
         {
-            if(itemsInventory.GetFreeCapacity() < 1)
+            if(itemsInventory->GetFreeCapacity() < 1)
             {
                 fOutWarn("Not enough inventory capacity to buy food!");
                 break;
@@ -211,7 +211,7 @@ void Player::simulateAction()
                 fOutWarn("Not enough money to buy food!");
                 break;
             }
-            itemsInventory.AddItem(beans);
+            itemsInventory->AddItem(beans);
 
             fOut("Ate food!");
             fOutWarn("\t- " + std::to_string(s.GetPriceItem(1)) + "$");
@@ -219,7 +219,7 @@ void Player::simulateAction()
         }
         case (PlayerAction)BUY_GUN:
         {
-            if(gunsInventory.GetFreeCapacity() < 1)
+            if(gunsInventory->GetFreeCapacity() < 1)
             {
                 fOutWarn("Not enough inventory capacity to buy food!");
                 break;
@@ -232,7 +232,7 @@ void Player::simulateAction()
                 fOutWarn("Not enough money to buy Gun!");
                 break;
             }
-            itemsInventory.AddItem(gun);
+            itemsInventory->AddItem(gun);
 
             fOut("Bought a gun!");
             fOutSucc("\t +1 Gun");
@@ -243,9 +243,9 @@ void Player::simulateAction()
             goToSleep();
             break;
         case (PlayerAction)ACCESS_INVENTORY:
-            if(itemsInventory.GetCapacity() == 0)
+            if(itemsInventory->GetCapacity() == 0)
                 break;
-            Consume(*itemsInventory.items[0]);
+            Consume(*(itemsInventory->items[0]));
         default:
             break;
     }
@@ -300,17 +300,17 @@ void Player::setPlayerAlive(bool alive)
 }
 int Player::getNumberOfGuns()
 {
-    return gunsInventory.GetNumberOfItems(GUN);
+    return gunsInventory->GetNumberOfItems(GUN);
 }
 
-int Player::getDamage()
+int Player::getShootingDamage()
 {
     int skillLvl = shootingSkill.skillLevel;
-    Gun* gun = (Gun*)gunsInventory.GetItem(PRIMARY_GUN);
+    Gun* gun = (Gun*)gunsInventory->GetItem(PRIMARY_GUN);
 
     if(gun == nullptr)
     {
-        gun = (Gun*)gunsInventory.GetItem(SECONDARY_GUN);
+        gun = (Gun*)gunsInventory->GetItem(SECONDARY_GUN);
 
         if(gun == nullptr)
             return 0;
@@ -320,6 +320,15 @@ int Player::getDamage()
 
     return gunDamage * (skillLvl / 10);
 }
+
+int Player::getMiningDamage()
+{
+    int skillLvl = miningSkill.skillLevel;
+
+
+    return skillLvl;
+}
+
 
 void Player::useSkill(SkillTag skill)
 {
@@ -334,4 +343,9 @@ void Player::useSkill(SkillTag skill)
     default:
         break;
     }
+}
+
+void Player::addItem(Item* item)
+{
+    itemsInventory->AddItem(item);
 }
