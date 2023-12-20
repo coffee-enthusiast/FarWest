@@ -16,8 +16,8 @@ public:
         return new HomePlace(map); // Return an instance of the concrete class
     }
 
-    static IPlace* createShop(IMap *map) {
-        return new ShopPlace(map); // Return an instance of the concrete class
+    static IPlace* createShop(IMap *map, Shop* shop) {
+        return new ShopPlace(map, shop); // Return an instance of the concrete class
     }
 
     static IPlace* createMine(IMap *map) {

@@ -11,16 +11,19 @@ public:
     Shop(std::vector<std::pair<Item*, float>> sellingItems);
     Item* BuyItem(int position, float* playerCash);
     float GetPriceItem(int position);
+    void PrintSellingItems();
 };
 
 
 class ShopPlace: public IPlace
 {
 public:
-    ShopPlace(IMap* map);
+    ShopPlace(IMap* map, Shop* shop);
 
+    Shop* shop;
+    std::vector<int> PrintRoutes();
     //  Place virtual methods
-    void EnterPlace();
+    void EnterPlace(IPlayer* player);
     void PromptInput();
     void ReadInput();
     void ExitPlace();

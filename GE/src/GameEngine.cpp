@@ -1,6 +1,6 @@
 #include "GameEngine.h"
 #include "../include/Map.h"
-#include "../../UF/include/PlayerFactory.h"
+#include "../../UF/include/Factories.h"
 #include <iostream>
 #include <time.h> 
 #include "../../UI/include/IOFunctions.h"
@@ -8,12 +8,14 @@
 
 GameEngine::GameEngine()
 {
-    Map* worldMap = new Map();
     IPlayer* player = Factories::createPlayer();
+    Map* worldMap = new Map(player);
 
     std::vector<IPlace*> places;
     places.push_back(Factories::createHome(worldMap));
-    places.push_back(Factories::createShop(worldMap));
+
+    Shop* shop = new Shop();
+    places.push_back(Factories::createShop(worldMap, shop));
     places.push_back(Factories::createMine(worldMap));
 
     worldMap->SetPlaces(places);
@@ -29,23 +31,8 @@ GameEngine::GameEngine()
         currDay++;
         player->printStats();
         worldMap->currentPlace->PromptInput();
-        for(int i = 0; i < 3; i++)
-        {
-            fOut("Action(" + std::to_string((i+1)) + "/3):");
-            int userInput = -1;
-            fInInt(&userInput);
-            player->setPlayerAction(userInput);
-            processInput(player);
-            player->simulateAction();
-            player->printStats();
-            //  If sleeps
-            if(player->getPlayerAction() == 4)
-                break;
-        }
-        simulateDay(player);
-        //  If not sleeping
-        if(player->getPlayerAction() != 4)
-            player->goToSleep();
+        worldMap->currentPlace->ReadInput();
+
     }
 
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "Tags.h"
 class IPlayer
 {
@@ -39,6 +40,8 @@ public:
 class IMap
 {
 public:
+    IPlayer *player;
+    virtual std::vector<int> GetRoutes(int fromPlace) = 0;
     virtual void ChangePlace(int nextPlace) = 0;
 };
 
@@ -46,8 +49,9 @@ class IPlace
 {
 public:
     IMap* map;
+    IPlayer* player;
     PlaceTag placeTag;
-    virtual void EnterPlace() = 0;
+    virtual void EnterPlace(IPlayer* player) = 0;
     virtual void PromptInput() = 0;
     virtual void ReadInput() = 0;
     virtual void ExitPlace() = 0;

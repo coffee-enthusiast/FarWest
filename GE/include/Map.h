@@ -10,9 +10,11 @@ public:
     IPlace* currentPlace;
 
     Map();
+    Map(IPlayer *player);
 
     void SetPlaces(std::vector<IPlace*> places);
     void ChangePlace(int nextPlace);
+    std::vector<int> GetRoutes(int fromPlace);
 };
 
 

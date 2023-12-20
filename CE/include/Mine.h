@@ -18,9 +18,9 @@ class MinePlace: public IPlace
 {
 public:
     MinePlace(IMap* map);
-
+    std::vector<int> PrintRoutes();
     //  Place virtual methods
-    void EnterPlace();
+    void EnterPlace(IPlayer* player);
     void PromptInput();
     void ReadInput();
     void ExitPlace();

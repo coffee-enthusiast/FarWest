@@ -1,7 +1,15 @@
 #include "../include/Map.h"
 
+
 Map::Map()
 {
+
+}
+
+Map::Map(IPlayer *player)
+{
+
+    this->player = player;
     routes = new std::vector<int>[3];
 
     routes[HOME].push_back(SHOP);
@@ -29,6 +37,10 @@ void Map::ChangePlace(int place)
 
     currentPlace = places[place];
 
-    currentPlace->EnterPlace();
+    currentPlace->EnterPlace(player);
 }
 
+std::vector<int> Map::GetRoutes(int fromPlace)
+{
+    return routes[fromPlace];
+}

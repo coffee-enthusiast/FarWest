@@ -49,15 +49,36 @@ float Shop::GetPriceItem(int position)
     return this->sellingItems[position].second;
 }
 
-ShopPlace::ShopPlace(IMap* map)
+ShopPlace::ShopPlace(IMap* map, Shop* shop)
 {
     this->map = map;
-    this->placeTag = HOME;
+    this->placeTag = SHOP;
+
+    this->shop = shop;
+}
+
+std::vector<int> ShopPlace::PrintRoutes()
+{
+    std::vector<int> availRoutes = map->GetRoutes(placeTag);
+    fOut("Available routes:");
+    if(availRoutes.size() == 0)
+    {
+        fOut("-NONE-");
+        return availRoutes;
+    }
+
+    for(int i = 0; i < availRoutes.size(); i++)
+    {
+        fOut(std::to_string(i + 1) + "\t" + std::to_string((PlaceTag)availRoutes[i]));
+    }
+
+    return availRoutes;
 }
 
 //  Place virtual methods
-void ShopPlace::EnterPlace()
+void ShopPlace::EnterPlace(IPlayer* player)
 {
+    this->player = player;
     fOut("==========SHOP==========");
 }
 
@@ -68,8 +89,16 @@ void ShopPlace::PromptInput()
     fOut("Press 3: Leave Shop");
 }
 
+void Shop::PrintSellingItems()
+{
+
+}
+
 void ShopPlace::ReadInput()
 {
+    if(player == nullptr)
+        return;
+
     int input = -1;
 
     fInInt(&input);
@@ -77,11 +106,17 @@ void ShopPlace::ReadInput()
     switch(input)
     {
         case 1: //  Buy
+            shop->PrintSellingItems();
             break;
         case 2: //  Sell
             break;
         case 3: //  Leave
+        {
+            std::vector<int> choose = PrintRoutes();
+            fInInt(&input);
+            map->ChangePlace(choose[input-1]);
             break;
+        }
         default:
             break;
     }
@@ -89,6 +124,6 @@ void ShopPlace::ReadInput()
 
 void ShopPlace::ExitPlace()
 {
-
+    this->player = nullptr;
     fOut("==========LEAVING SHOP==========");
 }

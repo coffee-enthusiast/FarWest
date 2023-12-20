@@ -276,6 +276,7 @@ void Player::Consume(Item item)
 
 void Player::goToSleep()
 {
+    fOut("Sleeping..");
     addHealth(sleepHealth);
     addStamina(sleepStamina);
 }
