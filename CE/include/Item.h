@@ -30,7 +30,7 @@ enum ItemSubCategory
     RIFFLE_AMMO,
     //  ROCKS
     GOLD = 6,
-    DIAMONT,
+    DIAMOND,
     SIMPLE_ROCK,
 };
 

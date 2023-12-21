@@ -20,8 +20,13 @@ public:
     virtual int     getHealth()         = 0;
     virtual int     getShootingDamage()  = 0;
     virtual int     getMiningDamage()  = 0;
+    virtual void    addMoney(float moneyAmount) = 0;
+    virtual float   totalMoney() = 0;
     virtual void    useSkill(SkillTag skill) = 0;
     virtual void    addItem(Item* item) = 0;
+    virtual void    printItemsInventory()        = 0;
+    virtual Item*   getItemFromInventory(int position) = 0;
+    virtual void   discardItemFromInventory(int position) = 0;
 };
 
 class IEntity

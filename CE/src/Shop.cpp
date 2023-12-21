@@ -29,16 +29,37 @@ Shop::Shop(std::vector<std::pair<Item*, float>> sellingItems)
 {
     this->sellingItems = sellingItems;
 }
-Item* Shop::BuyItem(int position, float* playerCash)
+
+float Shop::GetItemPrice(int position)
+{
+    if(position >= sellingItems.size())
+        return -1;
+
+    return sellingItems[position].second;
+}
+
+Item* Shop::BuyItem(int position)
 {
     if(position >= sellingItems.size())
         return nullptr;
 
-    if(*playerCash < this->sellingItems[position].second)
-        return nullptr;
-
-    *playerCash -= this->sellingItems[position].second;
+    
     return this->sellingItems[position].first;
+}
+
+float Shop::SellItem(Item* item)
+{
+    switch(item->itemSubCategory)
+    {
+        case 6: //  GOLD
+            return 2.0;
+        case 7: //  DIAMOND
+            return 5.0;
+        default:
+            break;
+    }
+
+    return -1;
 }
 
 float Shop::GetPriceItem(int position)
@@ -91,7 +112,12 @@ void ShopPlace::PromptInput()
 
 void Shop::PrintSellingItems()
 {
-
+    fOut("Items:");
+    for(int i = 0; i < sellingItems.size(); i++)
+    {
+        std::pair<Item *, float > pair = sellingItems[i];
+        fOut(std::to_string(i) + ")\t" + pair.first->itemName + "\t$" + std::to_string(pair.second));
+    }
 }
 
 void ShopPlace::ReadInput()
@@ -106,10 +132,39 @@ void ShopPlace::ReadInput()
     switch(input)
     {
         case 1: //  Buy
+        {
             shop->PrintSellingItems();
+            fInInt(&input);
+            float itemPrice = shop->GetItemPrice(input);
+            if(itemPrice > player->totalMoney())
+            {
+                fOut("Not enough money to buy item!");
+                break;
+            }
+            Item* itemToBuy = shop->BuyItem(input);
+           
+            player->addMoney(-itemPrice);
+            player->addItem(itemToBuy);
+            fOut(itemToBuy->itemName + " purchased!");
             break;
+        }
         case 2: //  Sell
+        {
+            fOut("Choose item from your inventory:");
+            player->printItemsInventory();
+            fInInt(&input);
+            Item* itemToSell = player->getItemFromInventory(input);
+            float itemOfferedPrice = shop->SellItem(itemToSell);
+            if(itemOfferedPrice > 0)
+            {
+                player->addMoney(itemOfferedPrice);
+            }
+            player->discardItemFromInventory(input);
+            
+            fOut(itemToSell->itemName + " sold for $" + std::to_string(itemOfferedPrice));
+           
             break;
+        }
         case 3: //  Leave
         {
             std::vector<int> choose = PrintRoutes();

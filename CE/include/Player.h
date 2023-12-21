@@ -27,6 +27,7 @@ public:
     int GetCapacity();
     std::string PrintInventory();
     int GetNumberOfItems(ItemCategory itemCategory);
+    Item* GetItem(int position);
     Item* GetItem(ItemCategory itemCategory);
     Item* GetItem(ItemSubCategory itemSubCategory);
 };
@@ -69,6 +70,11 @@ public:
     int     getNumberOfGuns();
     int     getShootingDamage();
     int     getMiningDamage();
+    void    addMoney(float moneyAmount);
+    float   totalMoney();
     void    useSkill(SkillTag skill);
     void    addItem(Item* item);
+    void    printItemsInventory();
+    Item*   getItemFromInventory(int position);
+    void   discardItemFromInventory(int position);
 };

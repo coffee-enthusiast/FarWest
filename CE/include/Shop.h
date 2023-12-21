@@ -9,7 +9,9 @@ public:
     std::vector<std::pair<Item*, float>> sellingItems;
     Shop();
     Shop(std::vector<std::pair<Item*, float>> sellingItems);
-    Item* BuyItem(int position, float* playerCash);
+    float GetItemPrice(int position);
+    Item* BuyItem(int position);
+    float SellItem(Item* item);
     float GetPriceItem(int position);
     void PrintSellingItems();
 };

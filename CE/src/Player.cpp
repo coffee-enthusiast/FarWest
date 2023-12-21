@@ -58,7 +58,9 @@ std::string Inventory::PrintInventory()
             continue;
         }
 
-        str += items[i]->itemName + "\t" + std::to_string((ItemType)items[i]->itemType) + " ";
+        str += items[i]->itemName + "\t" + std::to_string((ItemType)items[i]->itemType) + " "
+                                    + std::to_string((ItemType)items[i]->itemCategory) + " "
+                                    + std::to_string((ItemType)items[i]->itemSubCategory) + " ";
 
         for(std::pair<int,int> gain : items[i]->gains)
         {
@@ -81,7 +83,13 @@ int Inventory::GetNumberOfItems(ItemCategory itemCategory)
     }
     return counter;
 }
+Item* Inventory::GetItem(int position)
+{
+    if(position < 0 || position >= items.size())
+        return nullptr;
 
+    return items[position];
+}
 Item* Inventory::GetItem(ItemCategory itemCategory)
 {
     for(Item* i : items)
@@ -131,11 +139,7 @@ void Player::printStats()
     fOut("\tStamina: " + std::to_string(playerAttributes[SP]) + "/" + std::to_string(maxStamina));
     fOut("\tNo of guns: " + std::to_string(numberOfGuns));
     fOut("=============");
-
-    fOut("Player Inventory:");
-    fOut("=============");
-    fOut(itemsInventory->PrintInventory());
-    fOut("--------------------------");
+    printItemsInventory();
 }
 
 void Player::addHealth(int healthAmount)
@@ -205,7 +209,7 @@ void Player::simulateAction()
             }
 
             Shop s = Shop();
-            Item* beans = s.BuyItem(1, &playerAttributes[MONEY]);
+            Item* beans = s.BuyItem(1);
             if(beans == nullptr)
             {
                 fOutWarn("Not enough money to buy food!");
@@ -226,7 +230,7 @@ void Player::simulateAction()
             }
 
             Shop s = Shop();
-            Item* gun = s.BuyItem(2, &playerAttributes[MONEY]);
+            Item* gun = s.BuyItem(2);
             if(gun == nullptr)
             {
                 fOutWarn("Not enough money to buy Gun!");
@@ -329,6 +333,15 @@ int Player::getMiningDamage()
     return skillLvl;
 }
 
+void Player::addMoney(float moneyAmount)
+{
+    playerAttributes[MONEY] += moneyAmount;
+}
+
+float   Player::totalMoney()
+{
+    return playerAttributes[MONEY];
+}
 
 void Player::useSkill(SkillTag skill)
 {
@@ -348,4 +361,29 @@ void Player::useSkill(SkillTag skill)
 void Player::addItem(Item* item)
 {
     itemsInventory->AddItem(item);
+}
+
+
+void Player::printItemsInventory()
+{
+    
+    fOut("Player Inventory:");
+    fOut("=============");
+    fOut(itemsInventory->PrintInventory());
+    fOut("--------------------------");
+}
+Item* Player::getItemFromInventory(int position)
+{
+    if(position < 0 || position >= itemsInventory->GetCapacity())
+        return nullptr;
+
+    return itemsInventory->GetItem(position);
+}
+
+void Player::discardItemFromInventory(int position)
+{
+    if(position < 0 || position >= itemsInventory->GetCapacity())
+        return;
+
+    itemsInventory->DeleteItem(position);
 }
